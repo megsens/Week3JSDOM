@@ -1,63 +1,28 @@
-const boom = document.getElementById('boom');
-const clap = document.getElementById('clap');
-const hihat = document.getElementById('hihat');
-const kick = document.getElementById('kick');
-const openhat = document.getElementById('openhat');
-const ride = document.getElementById('ride');
-const snare = document.getElementById('snare');
-const tink = document.getElementById('tink');
-const tom = document.getElementById('tom');
+const displayKey = document.querySelector(".key h2");
+const displayKeyCode = document.querySelector(".keyCode h2");
+const keyCodeDiv = document.querySelector(".keyCode");
+const overlay = document.querySelector(".overlay");
 
-// Makes noise when sound is clicked on
+window.addEventListener("keydown", (e) => {
+  overlay.classList.add("hide");
+  displayKey.innerHTML = e.key;
+  displayKeyCode.innerHTML = e.keyCode;
+  if (e.keyCode === 32) {
+    displayKey.innerHTML = `'space'`;
+  }
+});
 
-boom.addEventListener('click',() => {
-    new Audio ('./sounds/boom.wav').play();
-})
-clap.addEventListener('click',() => {
-    new Audio ('./sounds/clap.wav').play();
-})
-hihat.addEventListener('click',() => {
-    new Audio ('./sounds/hihat.wav').play();
-})
-kick.addEventListener('click',() => {
-    new Audio ('./sounds/kick.wav').play();
-})
-openhat.addEventListener('click',() => {
-    new Audio ('./sounds/openhat.wav').play();
-})
-ride.addEventListener('click',() => {
-    new Audio ('./sounds/ride.wav').play();
-})
-snare.addEventListener('click',() => {
-    new Audio ('./sounds/snare.wav').play();
-})
-tink.addEventListener('click',() => {
-    new Audio ('./sounds/tink.wav').play();
-})
-tom.addEventListener('click',() => {
-    new Audio ('./sounds/tom.wav').play();
-})
-
-// Makes noise when key is pressed
-
-document.addEventListener('keypress', (event) => {
-    if(event.key == "a") {
-        new Audio ('./sounds/boom.wav').play();
-    }else if (event.key == "s") {
-        new Audio ('./sounds/clap.wav').play();
-    }else if (event.key == "d") {
-        new Audio ('./sounds/hihat.wav').play();
-    }else if (event.key == "f") {
-        new Audio ('./sounds/kick.wav').play();
-    }else if (event.key == "g") {
-        new Audio ('./sounds/openhat.wav').play();
-    }else if (event.key == "h") {
-        new Audio ('./sounds/ride.wav').play();
-    }else if (event.key == "j") {
-        new Audio ('./sounds/snare.wav').play();
-    }else if (event.key == "k") {
-        new Audio ('./sounds/tink.wav').play();
-    }else if (event.key = "l") {
-        new Audio ('./sounds/tom.wav').play();
-    }
-})
+keyCodeDiv.addEventListener("click", (e) => {
+  const textArea = document.createElement("textarea");
+  textArea.setAttribute("readonly", "");
+  textArea.style.position = "absolute";
+  textArea.value = displayKeyCode.innerText;
+  document.body.appendChild(textArea);
+  textArea.select();
+  document.execCommand("copy");
+  document.body.removeChild(textArea);
+  keyCodeDiv.querySelector("p").innerText = "Copied";
+  setTimeout(() => {
+    keyCodeDiv.querySelector("p").innerText = "Click to Copy";
+  }, 2000);
+});
