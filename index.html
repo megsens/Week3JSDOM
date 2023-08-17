@@ -1,34 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drum Kit JS</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&family=Tilt+Prism&display=swap" rel="stylesheet">
-</head>
-<body>
-    <h1>Meg's Drum Kit Challenge:</h1>
-    <p>Click/Type the corresponding KEY to hear the sound -</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meg's Key Code Generator!</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
 
-    <!-- DRUM INPUT KEYS -->
-
-    <div class="set">
-        <button id="boom">A - Boom</button>
-        <button id="clap">S - Clap</button>
-        <button id="hihat">D - Hihat</button>
-        <button id="kick">F - Kick</button>
-        <button id="openhat">G - Openhat</button>
-        <button id="ride">H - Ride</button>
-        <button id="snare">J - Snare</button>
-        <button id="tink">K - Tink</button>
-        <button id="tom">L - Tom</button>
-    </div>
-
-    <!-- SCRIPT LINK -->
-
-    <script src="script.js"></script>
-</body>
+  <body>
+    <section>
+      <div class="container">
+        <div class="key">
+          <h1>Key Pressed:</h1>
+          <h2>G</h2>
+        </div>
+        <div class="separator"></div>
+        <div class="keyCode">
+          <h1>Key Code:</h1>
+          <h2>56</h2>
+        </div>
+      </div>
+    </section>
+    <div class="overlay"></div>
+    <script src="./script.js"></script>
+  </body>
 </html>
