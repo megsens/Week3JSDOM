@@ -1,18 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meg's Keycode Generator!</title>
-    <!-- Google Fonts -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap"
-      rel="stylesheet"/>
-    <!-- Stylesheet-->
-    <link rel="stylesheet" href="style.css" />
+    <title>Meg's Key Code Generator!</title>
+    <link rel="stylesheet" href="./style.css" />
   </head>
+
   <body>
-    <div id="result">Press Any Key To Get Started</div>
-    <!-- Script -->
-    <script src="script.js"></script>
+    <div class="greeting-container">
+      <h1 class="greeting">
+        Press a key on your keyboard to see the corresponding keycode:
+      </h1>
+    </div>
+    <section>
+      <div class="container">
+        <div class="key">
+          <a href=""></a>
+          <h1>Key Pressed:</h1>
+          <h2>G</h2>
+        </div>
+        <div class="margin-div"></div>
+        <div class="keyCode">
+          <h1>Key Code:</h1>
+          <h2>56</h2>
+        </div>
+      </div>
+    </section>
+    <div class="overlay"></div>
+    <div class="footerContainer">
+      <footer>
+        <h1>
+          View my other CodeNation project's
+          <a class="here" target="_blank" href="https://github.com/megsens"
+            >here</a
+          >
+        </h1>
+      </footer>
+    </div>
+    <script src="./script.js"></script>
   </body>
 </html>
